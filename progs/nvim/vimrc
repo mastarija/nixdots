@@ -1,0 +1,20 @@
+set number
+set nocompatible
+set clipboard^=unnamedplus
+
+set cursorline
+hi clear CursorLine
+hi CursorLine cterm=NONE ctermbg=Black
+hi clear CursorLineNr
+hi link CursorLineNr CursorLine
+
+" indentation
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
+" LSP
+au FileType haskell lua require'lspconfig'.hls.setup{}
+
+vmap <Tab> >gv
+vmap <S-Tab> <gv

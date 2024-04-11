@@ -1,0 +1,191 @@
+window:
+  opacity: 0.87
+  padding:
+    x: 10
+    y: 10
+
+live_config_reload: true
+
+font:
+  size: 12
+
+  normal:
+    style: Regular
+    family: Cascadia Code PL
+
+  bold:
+    style: Bold
+    family: Cascadia Code PL
+
+  italic:
+    style: Italic
+    family: Cascadia Code PL
+
+  bold_italic:
+    style: Bold Italic
+    family: Cascadia Code PL
+
+themes:
+  monokai_pro: &monokai_pro
+    primary:
+      background: '0x111111'
+      foreground: '0xfff1f3'
+
+    normal:
+      black:   '0x2c2525'
+      red:     '0xfd6883'
+      green:   '0xadda78'
+      yellow:  '0xf9cc6c'
+      blue:    '0xf38d70'
+      magenta: '0xa8a9eb'
+      cyan:    '0x85dacc'
+      white:   '0xfff1f3'
+
+    bright:
+      black:   '0x72696a'
+      red:     '0xfd6883'
+      green:   '0xadda78'
+      yellow:  '0xf9cc6c'
+      blue:    '0xf38d70'
+      magenta: '0xa8a9eb'
+      cyan:    '0x85dacc'
+      white:   '0xfff1f3'
+
+  monokai_charcoal: &monokai_charcoal
+    primary:
+      background: '#000000'
+      foreground: '#FFFFFF'
+
+    normal:
+      black:   '#1a1a1a'
+      red:     '#f4005f'
+      green:   '#98e024'
+      yellow:  '#fa8419'
+      blue:    '#9d65ff'
+      magenta: '#f4005f'
+      cyan:    '#58d1eb'
+      white:   '#c4c5b5'
+
+    bright:
+      black:   '#625e4c'
+      red:     '#f4005f'
+      green:   '#98e024'
+      yellow:  '#e0d561'
+      blue:    '#9d65ff'
+      magenta: '#f4005f'
+      cyan:    '#58d1eb'
+      white:   '#f6f6ef'
+
+  gruvbox_dark: &gruvbox_dark
+    primary:
+      background: '0x282828'
+      foreground: '0xebdbb2'
+
+    normal:
+      black:   '0x282828'
+      red:     '0xcc241d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0xa89984'
+
+    bright:
+      black:   '0x928374'
+      red:     '0xfb4934'
+      green:   '0xb8bb26'
+      yellow:  '0xfabd2f'
+      blue:    '0x83a598'
+      magenta: '0xd3869b'
+      cyan:    '0x8ec07c'
+      white:   '0xebdbb2'
+
+  sourcerer: &sourcerer
+    primary:
+      background: '#222222'
+      foreground: '#c2c2b0'
+
+    cursor:
+      text:   '#c2c2b0'
+      cursor: '#c2c2b0'
+
+    normal:
+      black:   '#111111'
+      red:     '#aa4450'
+      green:   '#719611'
+      yellow:  '#cc8800'
+      blue:    '#6688aa'
+      magenta: '#8f6f8f'
+      cyan:    '#528b8b'
+      white:   '#d3d3d3'
+
+    bright:
+      black:   '#181818'
+      red:     '#ff6a6a'
+      green:   '#b1d631'
+      yellow:  '#ff9800'
+      blue:    '#90b0d1'
+      magenta: '#8181a6'
+      cyan:    '#87ceeb'
+      white:   '#c1cdc1'
+
+  solarized_dark: &solarized_dark
+    primary:
+      background: '#222222'
+      foreground: '#839496'
+
+    cursor:
+      text:   '#002b36'
+      cursor: '#839496'
+
+    normal:
+      black:   '#073642'
+      red:     '#dc322f'
+      green:   '#859900'
+      yellow:  '#b58900'
+      blue:    '#268bd2'
+      magenta: '#d33682'
+      cyan:    '#2aa198'
+      white:   '#eee8d5'
+
+    bright:
+      black:   '#002b36'
+      red:     '#cb4b16'
+      green:   '#586e75'
+      yellow:  '#657b83'
+      blue:    '#839496'
+      magenta: '#6c71c4'
+      cyan:    '#93a1a1'
+      white:   '#fdf6e3'
+
+  solarized_light: &solarized_light
+    primary:
+      background: '#fdf6e3'
+      foreground: '#657b83'
+
+    cursor:
+      text:   '#fdf6e3'
+      cursor: '#657b83'
+
+    normal:
+      black:   '#073642'
+      red:     '#dc322f'
+      green:   '#859900'
+      yellow:  '#b58900'
+      blue:    '#268bd2'
+      magenta: '#d33682'
+      cyan:    '#2aa198'
+      white:   '#eee8d5'
+
+    bright:
+      black:   '#002b36'
+      red:     '#cb4b16'
+      green:   '#586e75'
+      yellow:  '#657b83'
+      blue:    '#839496'
+      magenta: '#6c71c4'
+      cyan:    '#93a1a1'
+      white:   '#fdf6e3'
+
+colors: *monokai_pro

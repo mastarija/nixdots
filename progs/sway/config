@@ -1,0 +1,226 @@
+# Colors
+#client.focused #ce6b02 #fc8405 #222222
+client.focused #a6bc27aa #a6bc27aa #222222
+
+# Mod keys
+set $alt Mod1
+set $mod Mod4
+
+# Directions
+set $dl h
+set $dr l
+set $du k
+set $dd j
+
+# Utilities
+set $term alacritty
+set $menu bemenu-run | xargs swaymsg exec --
+
+# Scratchpad
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
+# Main font
+font pango:Cascadia Code 10
+
+# Cursor theme
+#seat * xcursor_theme Adwaita
+seat * xcursor_theme capitaine-cursors 32
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod normal
+
+# Start a launcher
+bindsym $mod+d exec $menu
+
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Screenshot
+bindsym Print exec "grimshot --notify copy output"
+bindsym $mod+Print exec "grimshot --notify copy active"
+
+# Sound Control
+bindsym XF86AudioMute exec "pamixer -t"
+bindsym XF86AudioLowerVolume exec "pamixer -d 2"
+bindsym XF86AudioRaiseVolume exec "pamixer -i 2"
+
+# Microphone
+bindsym XF86AudioMicMute exec "pamixer --default-source -t"
+
+# Brightness
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+
+# Set Wallpaper
+# output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg ~/Pictures/Wallpapers/succulent.jpg fill
+output * bg ~/Pictures/Wallpapers/year-of-the-bunny.jpg fill
+
+# Keyboard layout
+input type:keyboard {
+  xkb_layout hr
+}
+
+input type:touchpad {
+  tap enabled
+  natural_scroll disabled
+}
+
+# Screens
+#output HDMI-A-1 pos 0 0 res 1920x1080
+#output eDP-1 pos 0 1080 res 1920x1200
+#focus output HDMI-A-1
+
+# Kill focused window
+bindsym $alt+F4 kill
+bindsym $mod+Shift+q kill
+
+# Reload the config
+bindsym $mod+Shift+c reload
+
+# Restart Sway inplace
+bindsym $mod+Shift+r restart
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+# Hybernate
+bindsym $alt+Control+h exec "systemctl hibernate"
+
+# Moving around:
+
+    # Move your focus around
+    bindsym $mod+$dl focus left
+    bindsym $mod+$dd focus down
+    bindsym $mod+$du focus up
+    bindsym $mod+$dr focus right
+
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$dl move left
+    bindsym $mod+Shift+$dd move down
+    bindsym $mod+Shift+$du move up
+    bindsym $mod+Shift+$dr move right
+
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+# Workspaces:
+
+    # Jump between back and forth
+    bindsym $alt+Tab workspace back_and_forth
+
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+# Layout stuff:
+
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+Control+h splith
+    bindsym $mod+Control+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+
+    # Make a window sticky
+    bindsym $mod+Shift+s sticky toggle
+
+# Resizing containers:
+
+mode "resize" {
+    bindsym $dl resize shrink width 5px
+    bindsym $dd resize grow height 5px
+    bindsym $du resize shrink height 5px
+    bindsym $dr resize grow width 5px
+
+    bindsym Left resize shrink width 5px
+    bindsym Down resize grow height 5px
+    bindsym Up resize shrink height 5px
+    bindsym Right resize grow width 5px
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Status Bar:
+
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    #gaps 5
+    position bottom
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    # status_command while echo "$(pamixer --get-volume)% SND" "::" "$(cat /sys/class/power_supply/BAT0/capacity) BAT" "::" "$(date +'%H:%M:%S / %d.%m.%Y')"; do sleep 1; done
+    #status_command while echo "$(cat /sys/class/power_supply/BAT0/capacity) BAT" "::" "$(date +'%H:%M:%S / %d.%m.%Y')"; do sleep 1; done
+
+    swaybar_command waybar
+    workspace_buttons yes
+
+    colors {
+        statusline #ffffff
+        background #222222
+        inactive_workspace #222222 #323232 #5c5c5c
+    }
+}
+
+
+# Inits
+for_window [class="Microsoft-edge"] border none
+
+default_border pixel
+default_floating_border pixel
+gaps inner 5
+
+# Kanshi
+exec_always "pkill kanshi; kanshi -c /etc/xdg/kanshi;"
+
+include /etc/sway/config.d/*

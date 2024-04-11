@@ -1,0 +1,16 @@
+profile {
+    output eDP-1 enable mode 1920x1200
+    exec swaymsg workspace 1, move workspace to eDP-1
+}
+
+profile {
+    output eDP-1 disable
+    output HDMI-A-1 mode 1920x1080@60Hz
+    exec swaymsg workspace 1, move workspace to HDMI-A-1
+}
+
+profile {
+    output eDP-1 disable
+    output DP-1 mode 1920x1080@60Hz
+    exec swaymsg workspace 1, move workspace to DP-1
+}
