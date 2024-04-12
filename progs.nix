@@ -27,6 +27,8 @@
 
     xdg-utils
 
+    linux-firmware
+
     # Terminals
     alacritty
 

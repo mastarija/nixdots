@@ -1,152 +1,108 @@
-{
-    "layer": "top",
-    "position": "top",
-    "height" : 25,
-    "margin" : "0 5 5 5",
+{ "layer"           : "top"
+, "position"        : "bottom"
+, "height"          : 31
+, "spacing"         : 0
 
-    "modules-left": [
-        "sway/mode",
-        "sway/workspaces",
-        "sway/window"
-    ],
+, "modules-left"    : ["sway/mode", "sway/workspaces", "sway/window"]
+, "modules-right"   : ["pulseaudio", "network", "cpu", "battery", "clock#time", "clock#date", "tray"]
+, "modules-center"  : []
 
-    "modules-right": [
-        "pulseaudio",
-        "network",
-        "memory",
-        "cpu",
-        "temperature",
-        "battery",
-        "clock#time",
-        "clock#date",
-        "tray"
-    ],
+, "sway/mode" :
+  { "format" : " {}"
+  , "tooltip": false
+  }
+, "sway/window" :
+  { "tooltip" : false
+  , "max-length" : 60
+  }
+, "sway/workspaces" :
+  { "format" : "{name}"
+  , "disable-scroll" : true
+  }
 
-    // Modules
+, "clock#time" :
+  { "interval": 1
+  , "format": "{:%H:%M:%S}"
+  , "tooltip": false
+  }
+, "clock#date" :
+  { "interval": 20
+  , "format": "{:%d/%m/%Y}"
+  , "tooltip": false
+  }
 
-    "battery": {
-        "interval": 10,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format-time": " ({H}:{M:02})",
-        "format": "{icon} {capacity}%{time}",
-        "format-charging": " {capacity}%{time}",
-        "format-charging-full": " {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-alt": "{icon} {power}W",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "tooltip": false
-    },
-
-    "clock#time": {
-        "interval": 1,
-        "format": "{:%H:%M:%S}",
-        "tooltip": false
-    },
-
-    "clock#date": {
-        "interval": 20,
-        "format": "{:%d.%m.%Y}",
-        "tooltip": false
-        //"tooltip-format": "{:%e %B %Y}"
-    },
-
-    "cpu": {
-        "interval": 5,
-        "tooltip": false,
-        "format": " {usage}%",
-        "format-alt": " {load}",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        }
-    },
-
-    "sway/language": {
-        "format": " {}",
-        "min-length": 5,
-        "on-click": "swaymsg 'input * xkb_switch_layout next'",
-        "tooltip": false
-    },
-
-    "memory": {
-        "interval": 5,
-        "format": " {used:0.1f}G/{total:0.1f}G",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        },
-        "tooltip": false
-    },
-
-    "network": {
-        "interval": 5,
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": " {ifname}",
-        "format-disconnected": "No connection",
-        "format-alt": " {ipaddr}/{cidr}",
-        "tooltip": false
-    },
-
-    "sway/mode": {
-        "format": "{}",
-        "tooltip": false
-    },
-
-    "sway/window": {
-        "format": "{}",
-        "max-length": 30,
-        "tooltip": false
-    },
-
-    "sway/workspaces": {
-        "disable-scroll-wraparound": true,
-        "smooth-scrolling-threshold": 4,
-        "enable-bar-scroll": true,
-        "format": "{name}"
-    },
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
-        },
-        "scroll-step": 1,
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "tooltip": false
-    },
-
-    "temperature": {
-        "critical-threshold": 90,
-        "interval": 5,
-        "format": "{icon} {temperatureC}°",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "tooltip": false
-    },
-
-    "tray": {
-        "icon-size": 18
+, "pulseaudio":
+  { "format": "{icon} {volume}%"
+  , "format-bluetooth": "{icon} {volume}%"
+  , "format-muted": ""
+  , "format-icons":
+    { "headphone": ""
+    , "hands-free": ""
+    , "headset": ""
+    , "phone": ""
+    , "portable": ""
+    , "car": ""
+    , "default": ["", ""]
     }
+  , "tooltip": false
+}
+
+, "network":
+  { "interval": 5
+  , "format-wifi": " {essid} ({signalStrength}%)"
+  , "format-ethernet": " {ifname}"
+  , "format-disconnected": "No connection"
+  , "format-alt": " {ipaddr}/{cidr}"
+  , "tooltip": false
+  }
+
+, "cpu":
+  { "interval": 5
+  , "tooltip": false
+  , "format": " {usage}% shit"
+  , "format-alt": " {load}"
+  , "states":
+    {
+      "warning": 70,
+      "critical": 90
+    }
+  }
+
+, "memory":
+  { "interval": 5
+  , "format": " {used:0.1f}/{total:0.1f}G"
+  , "states":
+    { "warning": 70
+    , "critical": 90
+    }
+  , "tooltip": false
+}
+
+, "temperature":
+  { "interval": 5
+  , "format": "{icon} {temperatureC}°"
+  , "format-icons": ["", "", "", "", ""]
+  , "critical-threshold": 90
+  , "tooltip": false
+  }
+
+, "battery":
+  { "interval": 10
+  , "states":
+    { "warning": 15
+    , "critical": 5
+    }
+  , "format": "{icon} {capacity}%{time}"
+  , "format-time": " ({H}:{M:02})"
+  , "format-charging": " {capacity}%{time}"
+  , "format-charging-full": " {capacity}%"
+  , "format-full": "{icon} {capacity}%"
+  , "format-alt": "{icon} {power}W"
+  , "format-icons":  [ "", "", "", "", "" ]
+  , "tooltip": false
+  }
+
+, "tray":
+  { "icon-size": 20
+  }
 }

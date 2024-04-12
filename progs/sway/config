@@ -14,7 +14,8 @@ set $dd j
 
 # Utilities
 set $term alacritty
-set $menu bemenu-run | xargs swaymsg exec --
+#set $menu bemenu-run | xargs swaymsg exec --
+set $menu wofi -d -G -S run | xargs swaymsg exec --
 
 # Scratchpad
 bindsym $mod+minus scratchpad show
@@ -24,8 +25,8 @@ bindsym $mod+Shift+minus move scratchpad
 font pango:Cascadia Code 10
 
 # Cursor theme
-#seat * xcursor_theme Adwaita
-seat * xcursor_theme capitaine-cursors 32
+#seat * xcursor_theme Hackneyed 24
+#seat * xcursor_theme capitaine-cursors 32
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod normal
@@ -53,9 +54,10 @@ bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
 
 # Set Wallpaper
-# output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-# output * bg ~/Pictures/Wallpapers/succulent.jpg fill
-output * bg ~/Pictures/Wallpapers/year-of-the-bunny.jpg fill
+#output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg ~/Pictures/Wallpapers/succulent.jpg fill
+#output * bg ~/Pictures/Wallpapers/year-of-the-bunny.jpg fill
+output * bg ~/Pictures/Wallpapers/fern.jpg fill
 
 # Keyboard layout
 input type:keyboard {
@@ -68,9 +70,9 @@ input type:touchpad {
 }
 
 # Screens
-#output HDMI-A-1 pos 0 0 res 1920x1080
-#output eDP-1 pos 0 1080 res 1920x1200
-#focus output HDMI-A-1
+output HDMI-A-1 pos 0 0 res 1920x1080
+output eDP-1 pos 0 1080 res 1920x1200
+focus output HDMI-A-1
 
 # Kill focused window
 bindsym $alt+F4 kill
@@ -194,7 +196,7 @@ bindsym $mod+r mode "resize"
 
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    #gaps 5
+    gaps 5
     position bottom
 
     # When the status_command prints a new line to stdout, swaybar updates.
@@ -215,6 +217,7 @@ bar {
 
 # Inits
 for_window [class="Microsoft-edge"] border none
+for_window [title="Discrete"] floating enable
 
 default_border pixel
 default_floating_border pixel

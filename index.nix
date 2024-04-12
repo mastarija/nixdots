@@ -26,6 +26,10 @@
   nixpkgs.config.allowUnfree = true;
   hardware.opengl.enable = true;
   virtualisation.docker.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_6_8;
+
+  # BIOS UPDATE
+  services.fwupd.enable = true;
 
   # BOOT LOADER
   boot.loader.systemd-boot.enable = true;
