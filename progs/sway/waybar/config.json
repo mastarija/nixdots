@@ -59,7 +59,7 @@
 , "cpu":
   { "interval": 5
   , "tooltip": false
-  , "format": " {usage}% shit"
+  , "format": " {usage}%"
   , "format-alt": " {load}"
   , "states":
     {

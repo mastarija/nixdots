@@ -1,3 +1,12 @@
+# Build system
+# sudo nixos-rebuild switch -I nixos-config=index.nix
+
+# Update packages
+# sudo nix-channel --update
+# sudo nixos-rebuild switch -I nixos-config=index.nix
+
+# Garbage collect
+# sudo nix-collect-garbage -d
 # sudo nixos-rebuild switch -I nixos-config=index.nix
 
 { lib , pkgs , config , ... } :
