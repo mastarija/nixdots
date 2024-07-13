@@ -20,4 +20,6 @@
     hashedPassword = "$6$4BGJ2RCJEAsDPggF$2sWx0xjbmtFCMFq27y3/xMAH83cQu8x/XXUUVF4A.Rv9H4VbR935CbIvsVg.W9FXMWo4Y4IfBXxgEpZNp7DEc/";
     isNormalUser = true;
   };
+
+  users.extraGroups.vboxusers.members = [ "mastarija" ];
 }

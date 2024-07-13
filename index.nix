@@ -34,8 +34,15 @@
   system.stateVersion = "22.11";
   nixpkgs.config.allowUnfree = true;
   hardware.opengl.enable = true;
-  virtualisation.docker.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_6_8;
+
+  # VIRTUALISATION
+  virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.draganddrop = true;
+  # boot.kernelModules = [ "vboxdrv" "vboxnetflt" "vboxnetadp" ];
 
   # BIOS UPDATE
   services.fwupd.enable = true;
@@ -73,7 +80,11 @@
   services.udev.enable = true;
   services.udev.extraRules =
   ''
+    # USB AUTO MOUNT
     ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", RUN{program}+="${pkgs.systemd}/bin/systemd-mount --no-block --automount=yes --collect $devnode /media"
+
+    # Smartcard Reader Permissions
+    # SUBSYSTEM=="usb", ATTR{idVendor}=="058f", ATTR{idProduct}=="9540", GROUP="plugdev", MODE="0660"
   '';
 
   # SHENNANIGANS
@@ -85,7 +96,6 @@
   # HOSTS
   networking.extraHosts =
   ''
-    127.0.0.1 aniwave.to
     127.0.0.1 www.reddit.com
     127.0.0.1 www.youtube.com
   '';

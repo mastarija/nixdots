@@ -1,0 +1,209 @@
+live_config_reload = true
+
+[colors.bright]
+black = "0x72696a"
+blue = "0xf38d70"
+cyan = "0x85dacc"
+green = "0xadda78"
+magenta = "0xa8a9eb"
+red = "0xfd6883"
+white = "0xfff1f3"
+yellow = "0xf9cc6c"
+
+[colors.normal]
+black = "0x2c2525"
+blue = "0xf38d70"
+cyan = "0x85dacc"
+green = "0xadda78"
+magenta = "0xa8a9eb"
+red = "0xfd6883"
+white = "0xfff1f3"
+yellow = "0xf9cc6c"
+
+[colors.primary]
+background = "0x111111"
+foreground = "0xfff1f3"
+
+[font]
+size = 12
+
+[font.bold]
+family = "Cascadia Code PL"
+style = "Bold"
+
+[font.bold_italic]
+family = "Cascadia Code PL"
+style = "Bold Italic"
+
+[font.italic]
+family = "Cascadia Code PL"
+style = "Italic"
+
+[font.normal]
+family = "Cascadia Code PL"
+style = "Regular"
+
+[window]
+blur = true
+opacity = 0.85
+
+[window.padding]
+x = 10
+y = 10
+
+# [themes.gruvbox_dark.bright]
+# black = "0x928374"
+# blue = "0x83a598"
+# cyan = "0x8ec07c"
+# green = "0xb8bb26"
+# magenta = "0xd3869b"
+# red = "0xfb4934"
+# white = "0xebdbb2"
+# yellow = "0xfabd2f"
+
+# [themes.gruvbox_dark.normal]
+# black = "0x282828"
+# blue = "0x458588"
+# cyan = "0x689d6a"
+# green = "0x98971a"
+# magenta = "0xb16286"
+# red = "0xcc241d"
+# white = "0xa89984"
+# yellow = "0xd79921"
+
+# [themes.gruvbox_dark.primary]
+# background = "0x282828"
+# foreground = "0xebdbb2"
+
+# [themes.monokai_charcoal.bright]
+# black = "#625e4c"
+# blue = "#9d65ff"
+# cyan = "#58d1eb"
+# green = "#98e024"
+# magenta = "#f4005f"
+# red = "#f4005f"
+# white = "#f6f6ef"
+# yellow = "#e0d561"
+
+# [themes.monokai_charcoal.normal]
+# black = "#1a1a1a"
+# blue = "#9d65ff"
+# cyan = "#58d1eb"
+# green = "#98e024"
+# magenta = "#f4005f"
+# red = "#f4005f"
+# white = "#c4c5b5"
+# yellow = "#fa8419"
+
+# [themes.monokai_charcoal.primary]
+# background = "#000000"
+# foreground = "#FFFFFF"
+
+# [themes.monokai_pro.bright]
+# black = "0x72696a"
+# blue = "0xf38d70"
+# cyan = "0x85dacc"
+# green = "0xadda78"
+# magenta = "0xa8a9eb"
+# red = "0xfd6883"
+# white = "0xfff1f3"
+# yellow = "0xf9cc6c"
+
+# [themes.monokai_pro.normal]
+# black = "0x2c2525"
+# blue = "0xf38d70"
+# cyan = "0x85dacc"
+# green = "0xadda78"
+# magenta = "0xa8a9eb"
+# red = "0xfd6883"
+# white = "0xfff1f3"
+# yellow = "0xf9cc6c"
+
+# [themes.monokai_pro.primary]
+# background = "0x111111"
+# foreground = "0xfff1f3"
+
+# [themes.solarized_dark.bright]
+# black = "#002b36"
+# blue = "#839496"
+# cyan = "#93a1a1"
+# green = "#586e75"
+# magenta = "#6c71c4"
+# red = "#cb4b16"
+# white = "#fdf6e3"
+# yellow = "#657b83"
+
+# [themes.solarized_dark.cursor]
+# cursor = "#839496"
+# text = "#002b36"
+
+# [themes.solarized_dark.normal]
+# black = "#073642"
+# blue = "#268bd2"
+# cyan = "#2aa198"
+# green = "#859900"
+# magenta = "#d33682"
+# red = "#dc322f"
+# white = "#eee8d5"
+# yellow = "#b58900"
+
+# [themes.solarized_dark.primary]
+# background = "#222222"
+# foreground = "#839496"
+
+# [themes.solarized_light.bright]
+# black = "#002b36"
+# blue = "#839496"
+# cyan = "#93a1a1"
+# green = "#586e75"
+# magenta = "#6c71c4"
+# red = "#cb4b16"
+# white = "#fdf6e3"
+# yellow = "#657b83"
+
+# [themes.solarized_light.cursor]
+# cursor = "#657b83"
+# text = "#fdf6e3"
+
+# [themes.solarized_light.normal]
+# black = "#073642"
+# blue = "#268bd2"
+# cyan = "#2aa198"
+# green = "#859900"
+# magenta = "#d33682"
+# red = "#dc322f"
+# white = "#eee8d5"
+# yellow = "#b58900"
+
+# [themes.solarized_light.primary]
+# background = "#fdf6e3"
+# foreground = "#657b83"
+
+# [themes.sourcerer.bright]
+# black = "#181818"
+# blue = "#90b0d1"
+# cyan = "#87ceeb"
+# green = "#b1d631"
+# magenta = "#8181a6"
+# red = "#ff6a6a"
+# white = "#c1cdc1"
+# yellow = "#ff9800"
+
+# [themes.sourcerer.cursor]
+# cursor = "#c2c2b0"
+# text = "#c2c2b0"
+
+# [themes.sourcerer.normal]
+# black = "#111111"
+# blue = "#6688aa"
+# cyan = "#528b8b"
+# green = "#719611"
+# magenta = "#8f6f8f"
+# red = "#aa4450"
+# white = "#d3d3d3"
+# yellow = "#cc8800"
+
+# [themes.sourcerer.primary]
+# background = "#222222"
+# foreground = "#c2c2b0"
+

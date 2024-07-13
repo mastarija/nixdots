@@ -1,6 +1,14 @@
 { pkgs , ... } :
 
 {
+  nixpkgs.overlays =
+    [ (self: super: {
+        swayfx = super.swayfx.overrideAttrs (oldAttrs: rec {
+          passthru = oldAttrs.passthru // {providedSessions = ["sway"];};
+        });
+      })
+    ];
+
   # STARTUP
 
   /*
@@ -17,7 +25,7 @@
     initial_session =
     {
       user = "mastarija";
-      command = "dbus-run-session ${pkgs.sway}/bin/sway";
+      command = "dbus-run-session ${pkgs.swayfx}/bin/sway";
     };
     default_session = initial_session;
   };
@@ -29,10 +37,8 @@
   */
   programs.xwayland.enable = true;
 
+  programs.sway.package = pkgs.swayfx;
   programs.sway.enable = true;
-  programs.sway.extraSessionCommands =
-  ''
-  '';
   programs.sway.extraPackages = with pkgs;
   [
     wev

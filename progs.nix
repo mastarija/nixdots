@@ -1,5 +1,8 @@
 { pkgs , ... } :
 
+# let
+#   eid = import ./eid.nix { inherit pkgs; };
+# in
 {
   # GLOBALLY INSTALLED PACKAGES
   programs.light.enable = true;
@@ -28,6 +31,13 @@
     xdg-utils
 
     linux-firmware
+
+    # Streaming
+    obs-studio
+
+    # pcscd
+    # eid
+    pcsc-tools
 
     # Terminals
     alacritty
@@ -76,5 +86,11 @@
     ghcid
     cabal2nix
     cabal-install
+
+    # Virtualisation
+    qemu
+    quickemu
+    # virtualbox
+    # virtualboxHostModules
   ];
 }

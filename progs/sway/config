@@ -1,6 +1,11 @@
 # Colors
 #client.focused #ce6b02 #fc8405 #222222
 client.focused #a6bc27aa #a6bc27aa #222222
+blur enable
+corner_radius 3
+blur_radius 2
+shadows enable
+shadow_blur_radius 50
 
 # Mod keys
 set $alt Mod1
@@ -57,7 +62,10 @@ bindsym XF86MonBrightnessDown exec light -U 10
 #output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg ~/Pictures/Wallpapers/succulent.jpg fill
 #output * bg ~/Pictures/Wallpapers/year-of-the-bunny.jpg fill
-output * bg ~/Pictures/Wallpapers/fern.jpg fill
+#output * bg ~/Pictures/Wallpapers/fern.jpg fill
+#output * bg ~/Pictures/Wallpapers/red-viper.jpg fill
+#output * bg ~/Pictures/Wallpapers/country-side.jpg fill
+output * bg ~/Pictures/Wallpapers/desert-city.png fill
 
 # Keyboard layout
 input type:keyboard {
@@ -218,6 +226,9 @@ bar {
 # Inits
 for_window [class="Microsoft-edge"] border none
 for_window [title="Discrete"] floating enable
+for_window [instance="Godot_ProjectList"] floating enable
+for_window [instance="Godot_Editor"] floating enable
+for_window [instance="Godot_Editor" title=".* - Godot Engine"] floating disable
 
 default_border pixel
 default_floating_border pixel
